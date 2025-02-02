@@ -8,8 +8,7 @@ import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
-        TaskFactoryImpl factory = new TaskFactoryImpl(new AddTaskStrategy(), new UpdateTaskStrategy()); // ✅ Usa el constructor correcto
-
+        TaskFactoryImpl factory = new TaskFactoryImpl(new AddTaskStrategy(), new UpdateTaskStrategy());
         Optional.ofNullable(args)
                 .map(p -> factory.getStrategy(p).actionTask(p));
     }
